@@ -42,9 +42,10 @@ def find_data_dir(search_root: Optional[str] = None) -> str:
 
     for root in candidate_roots:
         if os.path.isdir(root):
-            # Check if all required files are present
+            # Check if cached features or raw tables are present
+            has_cache = os.path.isfile(os.path.join(root, "cached_student_features_cutoff_60.csv"))
             present = [f for f in REQUIRED_OULAD_FILES if os.path.isfile(os.path.join(root, f))]
-            if len(present) >= 4:  # At least the main tables present
+            if has_cache or len(present) >= 3:
                 return os.path.abspath(root)
 
             # Check immediate subdirectories for nested extractions
@@ -52,8 +53,9 @@ def find_data_dir(search_root: Optional[str] = None) -> str:
                 for sub in os.listdir(root):
                     sub_path = os.path.join(root, sub)
                     if os.path.isdir(sub_path):
+                        has_cache_sub = os.path.isfile(os.path.join(sub_path, "cached_student_features_cutoff_60.csv"))
                         present_sub = [f for f in REQUIRED_OULAD_FILES if os.path.isfile(os.path.join(sub_path, f))]
-                        if len(present_sub) >= 4:
+                        if has_cache_sub or len(present_sub) >= 3:
                             return os.path.abspath(sub_path)
             except Exception:
                 pass

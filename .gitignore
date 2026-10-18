@@ -4,18 +4,9 @@ __pycache__/
 *$py.class
 *.pyd
 
-# Large Dataset CSVs & Caches (GitHub rejects files > 100MB; studentVle.csv is 454MB)
-data/*.csv
+# Raw 10.6M row VLE clicks (454 MB - exceeds GitHub 100MB limit)
+data/studentVle.csv
 data/*.parquet
-
-# Keep dataset metadata files
-!data/README.txt
-!data/OULAD.names
-!data/.gitkeep
-
-# Outputs
-outputs/*.csv
-!outputs/.gitkeep
 
 # Environments & IDEs
 .env
@@ -29,3 +20,7 @@ ENV/
 # Streamlit local config & logs
 .streamlit/
 *.log
+
+# Outputs
+outputs/*.csv
+!outputs/.gitkeep
