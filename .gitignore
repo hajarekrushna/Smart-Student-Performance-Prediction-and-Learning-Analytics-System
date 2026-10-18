@@ -1,0 +1,31 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+
+# Large Dataset CSVs & Caches (GitHub rejects files > 100MB; studentVle.csv is 454MB)
+data/*.csv
+data/*.parquet
+
+# Keep dataset metadata files
+!data/README.txt
+!data/OULAD.names
+!data/.gitkeep
+
+# Outputs
+outputs/*.csv
+!outputs/.gitkeep
+
+# Environments & IDEs
+.env
+.venv
+env/
+venv/
+ENV/
+.vscode/
+.idea/
+
+# Streamlit local config & logs
+.streamlit/
+*.log
