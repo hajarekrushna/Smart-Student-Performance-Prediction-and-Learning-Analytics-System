@@ -1,6 +1,7 @@
 # Smart Student Performance Prediction & Learning Analytics System
 
 An end-to-end Machine Learning mini project and interactive Streamlit analytics suite built on the **Open University Learning Analytics Dataset (OULAD)**. This system demonstrates all concepts from the Machine Learning Laboratory curriculum with strict academic rigor, zero target leakage, and reproducible pipelines.
+
 https://smart-student-performance-prediction-and-learning-analytics-sy.streamlit.app/
 
 ---
